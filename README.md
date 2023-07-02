@@ -18,7 +18,22 @@ docker-compose exec web-db psql -U postgres
 ```shell
 # initialize aerich
 docker-compose exec web aerich init -t app.db.TORTOISE_ORM
+# or use this preference now
+docker-compose exec web python app/db.py
 
 # create migrations
 docker-compose exec web aerich init-db
+
+docker-compose exec web aerich upgrade
+```
+
+```shell
+docker-compose exec web python -m pytest
+# or 
+docker-compose exec web pytest
+# or
+docker-compose exec web python -m pytest -p no:warnings;
+
+
+docker-compose down -v
 ```

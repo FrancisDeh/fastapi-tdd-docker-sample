@@ -34,6 +34,12 @@ docker-compose exec web pytest
 # or
 docker-compose exec web python -m pytest -p no:warnings;
 
-
 docker-compose down -v
+```
+
+```shell
+docker-compose exec web python -m pytest --cov="."
+docker-compose exec web python -m pytest --cov="." --cov-report html
+
+docker-compose exec web flake8 .
 ```

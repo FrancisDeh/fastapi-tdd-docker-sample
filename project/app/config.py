@@ -1,9 +1,8 @@
 import logging
 from functools import lru_cache
 
-from pydantic.networks import AnyUrl
-
 from pydantic import BaseSettings
+from pydantic.networks import AnyUrl
 
 log = logging.getLogger("uvicorn")
 

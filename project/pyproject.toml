@@ -2,3 +2,16 @@
 tortoise_orm = "app.db.TORTOISE_ORM"
 location = "./migrations"
 src_folder = "./."
+
+[tool.black]
+# 'extend-exclude' excludes files or directories in addition to the defaults
+exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+/(
+  env
+)
+'''
+
+[tool.isort]
+skip= ["env"]
